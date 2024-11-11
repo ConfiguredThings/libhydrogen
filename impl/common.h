@@ -6,6 +6,9 @@
 #    define errno         hydro_errno
 static int errno;
 #else
+    #if defined(CHERIOT)
+        static int errno;
+    #endif
 #    include <errno.h>
 #    include <limits.h>
 #    include <stdbool.h>
